@@ -1,0 +1,6 @@
+LEBER VAI MANDAR O TEXTO ṔA NOIS OBG DHYVO
+
+Nome: {{ name }}
+CPF:{{ cpf }}
+Email: {{ email }}
+Telefone: {{ phone }}
