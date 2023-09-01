@@ -1,10 +1,12 @@
+from django.conf import settings
 from django.contrib import messages
+from django.core import mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from subscriptions.forms import SubscriptionForm
-from django.core import mail
 from django.template.loader import render_to_string
-from django.conf import settings
+
+from subscriptions.forms import SubscriptionForm
+
 
 def subscribe(request):
     if request.method == 'POST':
