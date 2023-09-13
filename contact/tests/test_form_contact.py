@@ -21,9 +21,9 @@ class ContactGetTest(TestCase):
 
     def test_contact_html(self):
         _html = (('<form', 1),
-                ('<input', 5),
-                ('type="text"', 2),
-                ('type="email"', 1)
+                ('<input', 6),
+                ('type="text"', 3),
+                ('type="email"', 1),
                 ('type="hidden"',1),
                 ('type="submit"', 1))
         for type, number in _html:
