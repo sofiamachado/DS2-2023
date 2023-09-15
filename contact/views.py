@@ -9,12 +9,8 @@ from contact.forms import ContactForm
 def contact(request):
     if request.method == 'POST':
         return formCreate(request)
-    return formNew(request)
-
-def formNew(request):
-    form = ContactForm(request.POST)
-
-    return render(request, 'contact/contact_form.html', {'form': form})
+    else:
+        return formNew(request)
 
 def formCreate(request):
     form = ContactForm(request.POST)
@@ -27,3 +23,8 @@ def formCreate(request):
     messages.success(request, 'Dados para contato preenchidos!')
     
     return HttpResponseRedirect('/contact/')
+
+def formNew(request):
+    form = ContactForm()
+
+    return render(request, 'contact/contact_form.html', {'form': form})
