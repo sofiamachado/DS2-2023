@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.template.loader import render_to_string
 
 from subscriptions.forms import SubscriptionForm
-
+from subscriptions.models import Subscription
 
 def subscribe(request):
     if request.method == 'POST':
@@ -25,7 +25,10 @@ def create(request):
                form.cleaned_data['email'], 
                'subscriptions/subscription_email.txt', 
                form.cleaned_data)
- 
+    
+    Subscription.objects.create(**form.cleaned_data)
+    # ** argumentos nominais, n precisa de ordem, como os dados sao iguais ele n comparou
+    # * argumentos com ordem
     messages.success(request, 'Inscrição realizada com sucesso!')
     return HttpResponseRedirect("/inscricao/")
 
